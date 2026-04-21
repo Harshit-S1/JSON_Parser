@@ -29,8 +29,6 @@ class JsonParser {
 private:
     string input;
     size_t pos = 0;
-
-    // --- LEXER HELPER FUNCTIONS ---
     void skipWhitespace() {
         while (pos < input.length() && isspace(input[pos])) pos++;
     }
@@ -53,7 +51,6 @@ private:
         return stod(input.substr(start, pos - start));
     }
 
-    // --- RECURSIVE DESCENT PARSER ---
     shared_ptr<JsonNode> parseValue() {
         skipWhitespace();
         if (pos >= input.length()) throw runtime_error("Unexpected end of input");
