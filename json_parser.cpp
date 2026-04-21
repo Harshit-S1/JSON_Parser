@@ -138,10 +138,10 @@ int main() {
     })";
 
     try {
-        cout << "Parsing JSON...\n";
+        cout << "Parsing JSON\n";
         JsonParser parser(raw_json);
         auto ast = parser.parse();
-        cout << "Successfully parsed into C++ Abstract Syntax Tree!\n";
+        cout << "Parsed into C++ Abstract Syntax Tree!\n";
         
         // In a full implementation, you would write a traverse/print function here.
         // For now, if it doesn't throw an error, the tree was built perfectly.
